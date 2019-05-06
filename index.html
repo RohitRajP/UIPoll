@@ -32,19 +32,19 @@
                 <div id="welcomeMessage">
                     
                 </div>
-                <div class="card mt-5 animated bounceInLeft delay-2s slower p-0" id="buttonGroupCard">
+                <div class="card mt-5 animated bounceInLeft delay-2s p-0" id="buttonGroupCard">
                     <div class="btn-group-vertical ">
-                        <button type="button" class="btn btn-outline-success">This is awesome! Totally killing it dude!</button>   
-                        <button type="button" class="btn btn-outline-success">It's pretty good, but there is scope for improvement</button>
-                        <button type="button" class="btn btn-outline-warning">It's okay. Can be done much better though</button>
-                        <button type="button" class="btn btn-outline-warning">It's bad dude.
+                        <button type="button" onclick="sendOpinion(0)" id="vgood" class="btn btn-outline-success">This is awesome! Totally killing it dude!</button>   
+                        <button type="button" onclick="sendOpinion(1)" id="good" class="btn btn-outline-success">It's pretty good, but there is scope for improvement</button>
+                        <button type="button" onclick="sendOpinion(2)" id="okay" class="btn btn-outline-warning">It's okay. Can be done much better though</button>
+                        <button type="button" onclick="sendOpinion(3)" id="bad" class="btn btn-outline-warning">It's bad dude.
                         And I mean, it sticks out like a camel in the Arctic</button>
-                        <button type="button" class="btn btn-outline-danger">You have to find another job</button>
+                        <button type="button" onclick="sendOpinion(4)" id="vbad" class="btn btn-outline-danger">You have to find another job</button>
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <div class="card shadow-lg mr-lg-5 mr-md-5 mt-5 mb-3" id="uiViewCard">
+                <div class="card animated bounceInRight delay-1s shadow-lg mr-lg-5 mr-md-5 mt-5 mb-3" id="uiViewCard">
                     <div class="card-body">
                         <img id="uiDesign" src="" class="img-fluid" alt="Responsive image">
                     </div>
