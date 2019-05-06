@@ -1,7 +1,7 @@
 var fieldId;
 window.onload = async function () {
-    let bannerNode = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
-    bannerNode.parentNode.removeChild(bannerNode);
+    // let bannerNode = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
+    // bannerNode.parentNode.removeChild(bannerNode);
     fieldId = getQueryVariable("imgId");
     var response = await httpGet("https://uipoll.000webhostapp.com/uiPollApi/api/getImgDetails.php?imgId=" + fieldId)
     // console.log(httpGet("http://localhost/WebProjects/uiPollApi/api/getDesc.php?itemName=" + fieldId))
