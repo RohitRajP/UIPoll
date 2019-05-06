@@ -9,13 +9,11 @@ window.onload = async function () {
     // console.log("http://localhost/WebProjects/uiPollApi/images/" + $fileId)
     // var response = httpGet("http://localhost/WebProjects/uiPollApi/api/getDesc.php?itemName=" + fieldId);
     document.getElementById("uiDesign").src = "http://localhost/WebProjects/uiPollApi/images/" + obj[0]['name'];
-    document.getElementById("welcomeMessage").innerHTML = '<h1 id="mainMessageText" class="animated fadeIn">Hi there! <br> Welcome to UiPoll 👋</h1 ><h4 id="messageText" class="animated fadeIn delay-1s">UiPoll is a venture I started to help me get feedback on my UI designs from the very same people who would be using it in the future</h4><h5 class="animated fadeIn delay-1s slower"> What do you guys think of this UI mockup? 😃</h5> <h6 class="animated fadeIn delay-1s slower" id="itemDesc"></h6><p class="animated fadeIn delay-1s slower"> (Your choice is completely annonymous as we are not collecting any identity info 😉)  </p>'
-    document.cookie = "name=Rohite"
-    console.log(document.cookie)
-    var opinionGiven = getCookie("name");
-    console.log(opinionGiven)
+    document.getElementById("welcomeMessage").innerHTML = '<h1 id="mainMessageText" class="animated fadeIn">Hi there! <br> Welcome to UiPoll 👋</h1 ><h4 id="messageText" class="animated fadeIn delay-1s">UiPoll is a venture we started to help us get feedback on our UI designs from the very same people who we hope to delight someday with our ideas</h4><h5 class="animated fadeIn delay-1s slower"> So, What do you think of this UI mockup? 😃</h5> <h5 class="animated fadeIn delay-1s slower" id="itemDesc"></h5><p class="animated fadeIn delay-1s slower"> (Your choice is completely annonymous as we do not collect any identity info 😉)  </p>'
+
+    var opinionGiven = getCookie(fieldId);
     if (opinionGiven == "") {
-        console.log("Get opinoons");
+        document.getElementById("buttonsOrthankyou").innerHTML = '<div class="btn-group-vertical "><button type = "button" onclick = "sendOpinion(0)" id = "vgood"class="btn btn-outline-success" > This is awesome! Totally killing it dude!</button><button type="button" onclick="sendOpinion(1)" id="good"class="btn btn-outline-success">It\'s pretty good, but there is scope for improvement</button><button type="button" onclick="sendOpinion(2)" id="okay"class="btn btn-outline-warning">It\'s okay. Can be done much better though</button><button type="button" onclick="sendOpinion(3)" id="bad" class="btn btn-outline-warning">It\'s bad dude. And I mean, it sticks out like a camel in the Arctic</button><button type="button" onclick="sendOpinion(4)" id="vbad" class="btn btn-outline-danger">You have to find another job</button></div >';
     }
     document.getElementById("itemDesc").innerText = "Design Description: " + obj[0]['desc'];
     document.getElementById("preloader").innerHTML = "";
@@ -52,6 +50,7 @@ async function sendOpinion(opinionId) {
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
     xmlHttp.send(null);
     setCookie(fieldId, opinionId, 7);
+    document.getElementById("buttonsOrthankyou").innerHTML = '<div id="thankYouDiv"><h3 id = "bigT" > Big thanks <br> and lots of love <br> from us here at TFMT</h3 ><h4>Your feedback will help us understand how we can make even more beautiful porducts for you</h4><h4>Stay tuned for more UIPolls</h4></div >'
 }
 
 function setCookie(cname, cvalue, exdays) {

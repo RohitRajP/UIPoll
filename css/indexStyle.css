@@ -1,3 +1,9 @@
+/* @font-face {
+    font-family: TimeBurner;
+    src: url("../fonts/timeburnerbold.ttf");
+    src: url("../fonts/timeburnernormal.ttf");
+} */
+
 body {
     background: #ff00cc;
     /* fallback for old browsers */
@@ -7,9 +13,10 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
-    font-family: 'Roboto',
+    font-family: 'Ubuntu',
         sans-serif;
 }
+
 
 /* Dosis-Bold
 Dosis-ExtraBold */
@@ -21,7 +28,7 @@ Dosis-ExtraBold */
 
 #uiViewCard {
     text-align: center;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 #buttonGroupCard {
@@ -67,6 +74,22 @@ p {
 }
 
 
+#thankYouDiv {
+    font-family: 'Dosis',
+        sans-serif;
+    background: #ff00cc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #333399, #ff00cc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #333399, #ff00cc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#bigT {
+    font-weight: bold;
+}
 
 
 /*preloader*/
