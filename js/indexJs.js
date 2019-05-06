@@ -1,14 +1,16 @@
 var fieldId;
 window.onload = async function () {
+    let bannerNode = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
+    bannerNode.parentNode.removeChild(bannerNode);
     fieldId = getQueryVariable("imgId");
-    var response = await httpGet("http://localhost/WebProjects/uiPollApi/api/getImgDetails.php?imgId=" + fieldId)
+    var response = await httpGet("https://uipoll.000webhostapp.com/uiPollApi/api/getImgDetails.php?imgId=" + fieldId)
     // console.log(httpGet("http://localhost/WebProjects/uiPollApi/api/getDesc.php?itemName=" + fieldId))
     // console.log("hi");
     var obj = JSON.parse(response);
     // console.log(obj[0]['name']);
     // console.log("http://localhost/WebProjects/uiPollApi/images/" + $fileId)
     // var response = httpGet("http://localhost/WebProjects/uiPollApi/api/getDesc.php?itemName=" + fieldId);
-    document.getElementById("uiDesign").src = "http://localhost/WebProjects/uiPollApi/images/" + obj[0]['name'];
+    document.getElementById("uiDesign").src = "https://uipoll.000webhostapp.com/uiPollApi/images/" + obj[0]['name'];
     document.getElementById("welcomeMessage").innerHTML = '<h1 id="mainMessageText" class="animated fadeIn">Hi there! <br> Welcome to UiPoll 👋</h1 ><h4 id="messageText" class="animated fadeIn delay-1s">UiPoll is a venture we started to help us get feedback on our UI designs from the very same people who we hope to delight someday with our ideas</h4><h5 class="animated fadeIn delay-1s slower"> So, What do you think of this UI mockup? 😃</h5> <h5 class="animated fadeIn delay-1s slower" id="itemDesc"></h5><p class="animated fadeIn delay-1s slower"> (Your choice is completely annonymous as we do not collect any identity info 😉)  </p>'
 
     var opinionGiven = getCookie(fieldId);
@@ -45,7 +47,7 @@ async function httpGet(theUrl) {
 }
 
 async function sendOpinion(opinionId) {
-    theUrl = "http://localhost/WebProjects/uiPollApi/api/setOpinion.php?imgId=" + fieldId + "&opinion=" + opinionId
+    theUrl = "https://uipoll.000webhostapp.com/uiPollApi/api/setOpinion.php?imgId=" + fieldId + "&opinion=" + opinionId
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
     xmlHttp.send(null);
@@ -69,7 +71,7 @@ function getCookie(cname) {
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
         }
-        if (c.indexOf(name) == 0) {
+        if (c.indexOf(name) === 0) {
             return c.substring(name.length, c.length);
         }
     }
