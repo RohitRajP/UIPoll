@@ -52,7 +52,7 @@ async function sendOpinion(opinionId) {
     xmlHttp.open("GET", theUrl, false); // false for synchronous request
     xmlHttp.send(null);
     setCookie(fieldId, opinionId, 7);
-    document.getElementById("buttonsOrthankyou").innerHTML = '<div id="thankYouDiv"><h3 id = "bigT" > Big thanks <br> and lots of love <br> from us here at TFMT</h3 ><h4>Your feedback will help us understand how we can make even more beautiful porducts for you</h4><h4>Stay tuned for more UIPolls</h4></div >'
+    document.getElementById("buttonsOrthankyou").innerHTML = '<div id="thankYouDiv"><h3 id = "bigT" > Big thanks <br> and lots of love <br> from us here at TMFT</h3 ><h4>Your feedback will help us understand how we can make even more beautiful porducts for you</h4><h4>Stay tuned for more UIPolls</h4></div >'
 }
 
 function setCookie(cname, cvalue, exdays) {
